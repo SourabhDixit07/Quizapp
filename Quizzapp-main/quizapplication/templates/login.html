@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>Login</title></head>
+<body class="container mt-5">
+  <h2>Login</h2>
+  <form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" name="remember_me" id="remember_me">
+    <label class="form-check-label" for="remember_me">Remember Me</label>
+  </div>
+
+  <button type="submit" class="btn btn-primary mt-2">Login</button>
+</form>
+
+  <p>New user? <a href="/register/">Register</a></p>
+  <p><a href="{% url 'password_reset' %}">Forgot Password?</a></p>
+
+</body>
+</html>
